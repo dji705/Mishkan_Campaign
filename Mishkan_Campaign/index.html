@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>קמפיין משכן התלמוד - מערכת ניהול</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-auth-compat.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+</head>
+<body>
+
+    <div id="login-screen">
+        <div class="login-box">
+            <img src="https://www.netfree.link/static/img/logo.png" alt="Logo" width="100">
+            <h2>כניסה למערכת הקמפיין</h2>
+            <p>משכן התלמוד - שיעור ב'</p>
+            <button id="google-login-btn">התחברות מאובטחת עם Google</button>
+        </div>
+    </div>
+
+    <div id="main-app" style="display:none;">
+        <header>
+            <h1>משכן התלמוד - שיעור ב' בתנופה</h1>
+            <div id="user-info"></div>
+        </header>
+
+        <section class="lyrics-card">
+            <p>"אוי, משכן התלמוד – בונים פה עולמות..."</p>
+        </section>
+
+        <section class="donors-dashboard">
+            <h3>רשימת מתרימים בזמן אמת</h3>
+            <div id="donors-list">
+                <p>טוען נתונים מנדרים פלוס...</p>
+            </div>
+        </section>
+
+        <button class="pay-btn" onclick="openNedarimPay()">תרום עכשיו 🎉</button>
+    </div>
+
+    <script src="auth.js"></script>
+    <script src="donors.js"></script>
+</body>
+</html>
