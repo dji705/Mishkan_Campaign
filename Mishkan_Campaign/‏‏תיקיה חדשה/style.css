@@ -1,117 +1,95 @@
 :root {
-    --purple: #4b0082;
-    --gold: #d4af37;
-    --light-gold: #fcf4d9;
-    --white: #ffffff;
+    --purim-purple: #4b0082;
+    --purim-gold: #d4af37;
+    --bright-orange: #ff8c00;
 }
 
 body {
+    background: #fff8e1; /* קרם פורימי */
     margin: 0;
-    direction: rtl;
-    background-color: #f0f2f5;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-/* מסך כניסה */
-#login-screen {
-    height: 100vh;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
-    background: linear-gradient(135deg, var(--purple), #2a004a);
+    min-height: 100vh;
 }
 
-.login-box {
-    background: var(--white);
-    padding: 40px;
-    border-radius: 20px;
+.hero-header {
+    background: linear-gradient(135deg, var(--purim-purple), #2a004a);
+    color: var(--purim-gold);
+    width: 100%;
+    padding: 60px 0;
     text-align: center;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-    max-width: 400px;
+    border-bottom: 8px solid var(--purim-gold);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+}
+
+.mask-icon { font-size: 3rem; margin-bottom: 10px; }
+
+.main-card {
+    background: white;
+    max-width: 500px;
     width: 90%;
+    margin: -40px auto 40px;
+    border-radius: 25px;
+    padding: 30px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+    border: 2px solid var(--purim-gold);
 }
 
-#google-login-btn {
-    background: #4285F4;
-    color: white;
-    border: none;
-    padding: 12px 24px;
-    border-radius: 5px;
-    font-size: 1.1em;
-    cursor: pointer;
+.lyrics-bubble {
+    background: #fdf2e9;
+    border-right: 6px solid var(--bright-orange);
+    padding: 15px;
+    border-radius: 12px;
+    font-size: 1.3rem;
     font-weight: bold;
-    transition: background 0.3s;
-}
-
-#google-login-btn:hover { background: #357abd; }
-
-/* מבנה האתר הראשי */
-header {
-    background: var(--purple);
-    color: var(--gold);
-    padding: 20px;
+    color: var(--purim-purple);
     text-align: center;
-    border-bottom: 4px solid var(--gold);
+    margin-bottom: 25px;
 }
 
-.lyrics-card {
-    background: var(--light-gold);
-    margin: 20px auto;
-    padding: 20px;
-    max-width: 800px;
+.progress-container {
+    background: #eee;
+    height: 30px;
     border-radius: 15px;
-    border: 1px solid var(--gold);
-    font-style: italic;
-    font-size: 1.2em;
-    text-align: center;
+    overflow: hidden;
+    border: 1px solid #ddd;
+    margin: 10px 0;
 }
 
-.donors-dashboard {
-    max-width: 800px;
-    margin: 20px auto;
-    background: var(--white);
-    padding: 20px;
-    border-radius: 15px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+.progress-fill {
+    background: linear-gradient(90deg, var(--bright-orange), var(--purim-gold));
+    width: 65%;
+    height: 100%;
+    transition: width 2s ease-out;
 }
 
-#donors-list {
-    margin-top: 15px;
-}
-
-.donor-item {
+.donor-row {
     display: flex;
     justify-content: space-between;
-    padding: 12px;
+    padding: 12px 0;
     border-bottom: 1px solid #eee;
-    animation: fadeIn 0.5s ease;
+    font-weight: 500;
 }
 
-.donor-item:last-child { border-bottom: none; }
+.donor-val { color: #27ae60; font-weight: bold; }
 
-.amount {
-    color: #27ae60;
-    font-weight: bold;
-}
-
-.pay-btn {
+.donate-btn {
     display: block;
-    width: 250px;
-    margin: 30px auto;
-    padding: 15px;
-    background: var(--gold);
-    color: var(--purple);
+    background: linear-gradient(to bottom, #ffd700, #d4af37);
+    color: var(--purim-purple);
     text-align: center;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 1.5em;
+    padding: 20px;
     border-radius: 50px;
-    border: none;
-    cursor: pointer;
-    box-shadow: 0 5px 15px rgba(212, 175, 55, 0.4);
+    text-decoration: none;
+    font-weight: 900;
+    font-size: 1.6rem;
+    margin-top: 25px;
+    box-shadow: 0 6px 15px rgba(212, 175, 55, 0.4);
+    transition: 0.3s;
 }
 
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
-}
+.donate-btn:hover { transform: scale(1.05); filter: brightness(1.1); }
+
+.gold-text { color: var(--purim-gold); font-weight: 800; }
